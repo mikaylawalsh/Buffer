@@ -7,5 +7,6 @@
 00 00 00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00 d0 10 40 0a 
 
-ed 24 25 62
-35 35 35 35
+ed 24 25 62 /* cookie/id */ 
+35 35 35 35 /* sammich types array */ 
+50 /* total sandwhiches  */ 
