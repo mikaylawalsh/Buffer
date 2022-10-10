@@ -325,7 +325,7 @@ Disassembly of section .text:
   4010e3:	48 89 cf             	mov    %rcx,%rdi
   4010e6:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
   4010ea:	e8 71 00 00 00       	callq  401160 <find_total>
-  4010ef:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  4010ef:	89 45 fc             	mov    %eax,-0x4(%rsbp)
   4010f2:	48 8b 4d f0          	mov    -0x10(%rbp),%rcx
   4010f6:	8b 01                	mov    (%rcx),%eax
   4010f8:	3b 04 25 e0 61 60 00 	cmp    0x6061e0,%eax
