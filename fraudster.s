@@ -8,5 +8,5 @@
 
 exploit:
     mov $0x622524ed,%rax
-    lea $0x20(%rsp),%rbp # offset of 20 rsp into rbp
+    lea 0x20(%rsp),%rbp # offset of 20 rsp into rbp
     ret 
