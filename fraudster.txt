@@ -14,4 +14,7 @@ c3                   	/* retq */
 90 90 90 90 90 90 90 90
 90 90 90 90 90 90 90 90
 90 90 90 90 90 90 90 90
- /* <address> */ 
+ /* <address> */  
+  /* <hard code return location bc it is not in stack> */ 
+
+  /* have enough nops in order to accomodate for the difference in 240 - just need 1 address*/ 

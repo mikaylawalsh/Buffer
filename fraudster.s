@@ -7,10 +7,6 @@
 # find size of buffer: ? 
 
 exploit:
-    push %rbp # we are still gonna need to push old rbp, but it won't be a fixed num
-    push %rsp
     mov $0x622524ed,%rax
-    pop %rbp
-    pop %rsp
+    lea $0x20(%rsp),%rbp # offset of 20 rsp into rbp
     ret 
-    
