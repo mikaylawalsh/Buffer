@@ -2,7 +2,7 @@
     # rbp: 0x55782fe0, rsp: 0x55782fc0 // return 5578
     # rbp: 0x55782f70, rsp: 0x55782f50 // return 5578
     # rbp: 0x55782f60, rsp: 0x55782f40 // return 1
-    # rbp: 0x55783040, rsp: 0x55783020
+    # rbp: 0x55783040, rsp: 0x55783020 // return 5578 
     # rbp: 0x55782ff0, rsp: 0x55782fd0
 # find size of buffer: 566 - getbufn 230 in decimal is 560  
 
