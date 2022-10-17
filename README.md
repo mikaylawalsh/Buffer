@@ -1,11 +1,17 @@
 # buffer
 
-## 🚨 IMPORTANT 🚨
-Please do not share this repository with anyone who is not a cs33 TA. 
+Note: There are some in line comments in the txt files and asm code, but the full 
+explanations for each level will be here. 
 
-## Repo Organization
-* solution - TA solution code
-* stencil - for stencil to be released to students
+Level 1: For this level, there were two main things I had to figure out: (1) what is the size of the buffer and (2) what is the address we want to return to instead. The second one was easy to find. Since we knew we wanted to return to the lights_off function in buffer, all I had to do was look at the disassembled code in my obj.txt file. Here I found the lights_out function and got the address of its starting point. In my case, it was 00000000004010a0. Next, I knew this value had to come after my buffer and the old rbp in my exploit string since the return address comes right before the old rbp which comes right beofre the buffer in memory and the exploit string writes from bottom to top. Additionally, however, since the machines we are using are little-endian I had to reverse this address so the least significant byte would be read first. Since every two of these numbers is a byte the line after my buffer in my exploit string would be a0 10 40 00 00 00 00 00. From here, I had to figure out the size of my buffer. I found this again by looking at my disassembled code. In the getbuf function, the fourth line in makes this call: lea    -0x50(%rbp),%rdi. This is the line where space is allocated for the buffer. (explain how i know this). That means that 0x50 is the size of the buffer and this converted to decimal is 80. So I needed 80 bytes of padding before and then an additional 8 bytes to bypass the old rbp. After that would come the return address we found ealier. So in the end, we would have 88 bytes of no-ops to fill up the buffer and bypass the old rbp and then 8 bytes of the new return address to lights_out. 
 
-Happy course dev-ing 🎉 
-Please reach out to the HTAs if any files are missing.
+Level 2: This level was very similar to the last one. The logic for lines 1 to 12 in the exploit string is the same as for level one. There was the 80 byte buffer, then 8 bytes to bypass the old rbp, and then 8 bytes for the new return address. Lines 13-16 are used to set the number of sandwiches. The struct sandwich_order has two components: the id and the sammich_types array. The id we wanted to set to be our cookie which is done on line 14. The sammich_types array comes directly after the id in memory. Since the id and each of the 4 elements of the array are ints, they each get 4 bytes in memory. I set each of the elements to be 20 in order to ensure that there was enough sandwiches. The reason the id and sammich_types come after the buffer and return address in the string is becuse they come before it in memory. The arguments of the function sandwich_order are set in the previous function, so we can overwrite them this way. However, there is padding that is necessary in order to make sure that we are overwriting the correct arguments. We can find this the same way we found the size of the buffer above. When looking in sandwich_order, there is a line  that reads lea    0x10(%rbp),%rax; 0x10 in decimal is 8, so we need 8 bytes of padding. This padding goes between our return address and arguments. In the end, we have 80 bytes of our buffer, 8 bytes of the old rbp, 8 bytes of our return address, 8 bytes of padding, 4 bytes of our cookie/id, and then 4 more 4-byte ints to set the sammich-types array. 
+
+Level 3: The first thing we had to do for this level was write some asm code. 
+- talk about asm code why we did each step 
+- buffer size 
+- reset rbp 
+- address of beginning of buffer and how we found it 
+
+Level 4: 
+- 
